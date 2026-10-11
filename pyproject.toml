@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools==82.0.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "basaltkv"
+version = "0.1.0"
+description = "Crash-consistent embedded transactional key-value store with verifiable durability"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "BasaltKV contributors"}]
+keywords = ["database", "key-value", "wal", "transaction", "embedded"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+  "Topic :: Database :: Database Engines/Servers",
+]
+dependencies = []
+
+[project.scripts]
+basaltkv = "basaltkv.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

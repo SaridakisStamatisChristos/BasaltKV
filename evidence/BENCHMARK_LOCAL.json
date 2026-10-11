@@ -1,0 +1,49 @@
+{
+  "comparative_claim": null,
+  "config": {
+    "batch_size": 10,
+    "batches": 100,
+    "gets": 3000,
+    "mixed": 1000,
+    "puts": 1000
+  },
+  "environment": {
+    "cpu_count": 5,
+    "implementation": "CPython",
+    "machine": "x86_64",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.13.5"
+  },
+  "final_stats": {
+    "compaction_count": 1,
+    "durability": "durable",
+    "keys": 2185,
+    "last_commit_sequence": 1384,
+    "live_bytes": 119346,
+    "read_only": false,
+    "recovery_duration_ms": 15.626,
+    "recovery_truncated_tail": false,
+    "session_deletes": 0,
+    "session_puts": 0,
+    "session_transactions": 0,
+    "snapshot_bytes": 145622,
+    "wal_bytes": 40
+  },
+  "metrics": {
+    "batched_write_ops_per_second": 164391.81276380867,
+    "batched_writes_seconds": 0.006083027999920887,
+    "compaction_seconds": 0.002823059999968791,
+    "database_bytes_after_compaction": 145662,
+    "database_bytes_before_compaction": 306365,
+    "mixed_ops_per_second": 75443.43387127694,
+    "mixed_seconds": 0.013254963999997926,
+    "random_gets_ops_per_second": 388903.6456197235,
+    "random_gets_seconds": 0.007713993000038499,
+    "reopen_recovery_seconds": 0.015710180000041873,
+    "sequential_puts_ops_per_second": 31413.840850368757,
+    "sequential_puts_seconds": 0.031833101999950486
+  },
+  "mode": "quick",
+  "note": "Single-environment reproducibility benchmark; no SOTA or competitor claim.",
+  "schema": 1
+}
