@@ -118,7 +118,9 @@ CI runs the real test and package commands on Linux, macOS, and Windows across s
 
 BasaltKV v0.1 does not provide serializable transactions, multi-process write concurrency, distributed replication, consensus, clustering, sharding, SQL, remote multi-tenancy, authentication, encryption at rest, network-filesystem safety, protection against malicious code in the same trusted process, or survival of storage-device lies that violate documented `fsync`/atomic-rename assumptions. It is not yet claimed production-ready.
 
-The repository contains no open-source license grant. Public visibility is not permission to copy, modify, or redistribute; the repository owner must add a license if one is intended.
+## License
+
+BasaltKV is currently **proprietary / all rights reserved**. Public visibility of this repository does not grant permission to use, copy, modify, redistribute, deploy, or create derivative works. See `LICENSE` for the governing terms.
 
 ## Documentation
 

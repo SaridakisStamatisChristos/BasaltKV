@@ -1,6 +1,6 @@
 # Final Adversarial Audit
 
-This audit is deliberately authority-aware: local execution evidence can close local gates, but cross-platform CI is not marked passed until GitHub Actions is actually observed on the final commit.
+This audit is authority-aware: local execution evidence closes local gates, while cross-platform compatibility claims are closed only by an observed GitHub Actions run on the implementation head.
 
 ## Hard invariant audit
 
@@ -22,10 +22,26 @@ This audit is deliberately authority-aware: local execution evidence can close l
 16. **Verifier detects every corruption class it claims?** Claimed structural/version/checksum/sequence/bounds classes have direct tests. Recognizable uncommitted tail is explicitly classified recoverable rather than corruption. **VERIFIED locally.**
 17. **Documentation stronger than evidence?** Production/SOTA/serializable/network-filesystem/equivalent-Windows-power-loss claims are explicitly withheld. **VERIFIED by audit.**
 
-## Remaining external gate
+## External CI closure
 
-- Cross-platform GitHub Actions matrix on the final manifest-bearing commit: **UNVERIFIED at source-generation time**. Do not label the repository fully complete if this run is red or cancelled.
+GitHub Actions run `38150293473` completed successfully on implementation commit
+`24e17b7065a082f3432a5f32ccc3722cedfcbd1d`.
 
-## Verdict before external CI
+Observed green lanes:
 
-**SYNTHESIS COMPLETE — final cross-platform CI observation pending.**
+- Linux, macOS, and Windows;
+- Python 3.11, 3.12, and 3.13;
+- static checks and full test suite on all nine OS/runtime combinations;
+- package build and installed-wheel CLI smoke;
+- evidence-manifest verification;
+- benchmark smoke.
+
+The evidence-closure commit that records this result changes legal/documentation/evidence
+metadata only; it does not change BasaltKV runtime source or tests.
+
+## Final verdict
+
+**R7 ACCEPTANCE GATES CLOSED for the declared v0.1 experimental scope.**
+
+This does **not** establish production readiness, formal verification, filesystem-independent
+power-loss guarantees, cryptographic authenticity, or performance superiority.
