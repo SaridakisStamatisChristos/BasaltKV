@@ -8,7 +8,7 @@ BasaltKV owns its persistence format, write-ahead log (WAL), recovery logic, tra
 
 ## Status
 
-v0.1 is an **alpha / experimental systems implementation**. The repository contains executable correctness, crash-injection, corruption, model-parity, concurrency, packaging, and manifest gates. See `evidence/FINAL_AUDIT.md` and `evidence/CLAIMS.md` before relying on a claim.
+v0.1 is an **alpha / experimental systems implementation**. The repository contains executable correctness, crash-injection, corruption, model-parity, concurrency, packaging, benchmark-smoke, and manifest gates. See `evidence/VERIFICATION.md` and `evidence/CLAIMS.md` before relying on a claim.
 
 ## Core properties
 
@@ -102,6 +102,19 @@ See `docs/STORAGE_FORMAT.md` for the byte-level format.
 ## Verify
 
 `basaltkv verify <path>` is read-only. It checks format versions, header/record framing, CRC32 checksums, database identity, commit-sequence continuity, transaction structure, and snapshot/WAL sequence agreement. A syntactically recognizable final torn/uncommitted WAL tail is reported as recoverable; arbitrary trailing bytes are rejected.
+
+## Evidence model
+
+BasaltKV keeps durable technical evidence separate from implementation-session history:
+
+- `evidence/REQUIREMENTS.md` is the active requirement/invariant coverage ledger.
+- `evidence/CLAIMS.md` records supported claims and explicit non-claims.
+- `evidence/ASSUMPTIONS.md` records scope and persistence assumptions.
+- `evidence/VERIFICATION.md` records reproducible local and CI verification evidence.
+- `evidence/BENCHMARK_LOCAL.json` is a single-environment benchmark observation, not a competitor claim.
+- `evidence/MANIFEST.sha256` seals the authoritative repository file set checked by CI.
+
+One-off repair chronology and superseded audit/session notes are intentionally not part of the active evidence surface; Git history preserves that development history.
 
 ## Development gates
 
